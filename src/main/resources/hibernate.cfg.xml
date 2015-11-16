@@ -1,0 +1,42 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD .//EM"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+ 
+   <session-factory>
+
+    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.url">jdbc:mysql://localhost/webnoticia</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password">root</property>
+
+    <property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+
+    <property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+    <property name="current_session_context_class">thread</property>
+    <property name="hibernate.show_sql">true</property>
+	<property name="hibernate.format_sql">false</property>
+	<property name="hbm2ddl.auto">update</property>
+	
+	<!-- MAPEAMENTO DE CLASSES -->
+		<!-- EMPRESA -->
+		<mapping class="br.com.noticia.entidade.Noticia"/>
+  </session-factory>
+  
+    <!--  POSTGRESS session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/vraptor4</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.username">postgres</property>
+        <property name="connection.password">admin</property>
+        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+ 
+        <property name="hbm2ddl.auto">update</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+ 
+        <mapping class="com.wordpress.fabiohbarbosa.vraptor4.model.entity.Empresa"/>
+    </session-factory>  -->
+ 
+</hibernate-configuration>
